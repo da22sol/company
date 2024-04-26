@@ -1,0 +1,202 @@
+@charset "utf-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap");
+
+*,
+*:before,
+*:after {
+  font-family: "Poppins", "Noto Sans KR", "Apple Gothic", "Apple SD Gothic Neo",
+    "돋움", "Dotum", "바탕", "Batang", "sans-serif";
+}
+
+html,
+body {
+}
+body {
+  -webkit-text-size-adjust: none;
+  color: #222222;
+  position: relative;
+  font-size: 18px;
+  line-height: 22px;
+}
+
+html,
+body,
+p,
+img,
+div,
+input,
+textarea,
+select,
+button,
+ul,
+header,
+footer,
+mark,
+article,
+ul li,
+dl,
+dl dt,
+dl dd,
+form,
+legend,
+caption,
+h1,
+h2,
+h3,
+h4,
+h5,
+fieldset,
+label,
+ol,
+ol li,
+xmp {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style-type: none;
+  font-family: "Nanum Gothic", "NanumGothic", "나눔고딕", "나눔 고딕",
+    "맑은고딕", "맑은 고딕", "MalgunGothic", "Malgun Gothic", "Apple Gothic",
+    "Apple SD Gothic Neo", "돋움", "Dotum", "바탕", "Batang", "sans-serif";
+}
+
+a {
+  color: #333333;
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  color: #000000;
+}
+
+html,
+body {
+  min-width: 320px;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+}
+img {
+  -ms-interpolation-mode: bicubic;
+}
+img,
+embed,
+object,
+video,
+audio {
+  max-width: 100%;
+}
+th {
+  background: transparent;
+}
+.echo2 {
+  display: block;
+  word-break: break-all;
+  white-space: pre-wrap;
+  margin: 1em 0px;
+  font-family: "Tahoma", "돋움", "dotum", "맑은고딕", "굴림";
+  font-size:/*9pt*/ 0.95em;
+  text-align: left;
+}
+textarea {
+  resize: vertical; /*none*/
+}
+
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+  overflow: visible;
+}
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 애니메이션 */
+.animated {
+  -webkit-animation-duration: 0.8s;
+  animation-duration: 0.8s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100px, 0);
+    transform: translate3d(0, 100px, 0);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -100px, 0);
+    -webkit-transform: translate3d(0, -100px, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    -webkit-transform: none;
+  }
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(100px, 0, 0);
+    -webkit-transform: translate3d(100px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    -webkit-transform: none;
+  }
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translate3d(-100px, 0, 0);
+    -webkit-transform: translate3d(-100px, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+    -webkit-transform: none;
+  }
+}
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+}
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+.fadeInDown {
+  -webkit-animation-name: fadeInDown;
+  animation-name: fadeInDown;
+}
+.fadeInLeft {
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+}
+.fadeInRight {
+  -webkit-animation-name: fadeInRight;
+  animation-name: fadeInRight;
+}
