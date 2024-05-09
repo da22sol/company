@@ -864,7 +864,9 @@ HEADER
   background: #fff;
   transition: all 0.3s ease-out;
 }
-
+.main-wrap .value02.active .info-list  li:not(.active) {
+  color: transparent;
+}
 /* 사업연혁 */
 
 /* 모달 */
