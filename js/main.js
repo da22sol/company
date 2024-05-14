@@ -36,7 +36,6 @@ if ($(window).width() > 1200) {
       "business",
       "value01",
       "value02",
-      "news",
       "customer",
       "contact",
     ],
@@ -45,16 +44,6 @@ if ($(window).width() > 1200) {
     responsiveWidth: 1200,
 
     afterLoad: function (origin, destination, direction) {
-      if (destination != 1) {
-        if ($(".btn-top").is(":hidden")) {
-          $(".btn-top").fadeIn();
-          $(".scroll-guide").fadeOut();
-        }
-      } else {
-        $(".btn-top").fadeOut();
-        $(".scroll-guide").fadeIn();
-      }
-
       if (destination == 4) {
         setTimeout(function () {
           $(".main-wrap .value02 .info-list").addClass("event");
@@ -96,8 +85,8 @@ if ($(window).width() > 1200) {
   });
 
   $(document).on(
-    "mouseenter",
-    ".main-wrap .value02 .info-list.event li",
+    "mouseover",
+    ".main-wrap .value02 .info-list.event li ",
     function () {
       var idx = $(this).index() + 1;
       $(this).addClass("active").siblings("li").removeClass("active");
@@ -105,10 +94,6 @@ if ($(window).width() > 1200) {
     }
   );
 
-  $(document).on("click", ".btn-top", function (e) {
-    e.preventDefault();
-    $.fn.fullpage.moveTo(1);
-  });
   $(window).resize(function () {
     responsiveFullpage();
   });
@@ -125,30 +110,7 @@ if ($(window).width() > 1200) {
       $.fn.fullpage.setLockAnchors(false);
     }
   }
-} else {
-  $(document).on("click", ".btn-top", function (e) {
-    e.preventDefault();
-    $("html").animate(
-      {
-        scrollTop: "0",
-      },
-      600
-    );
-  });
-}
-
-$(document).on("click", "#swp-visual-slide .btn-pp", function (e) {
-  var btn = $(this);
-  if (btn.hasClass("pause")) {
-    btn.removeClass("pause");
-    btn.addClass("play");
-    swpVisual.autoplay.stop();
-  } else if (btn.hasClass("play")) {
-    btn.removeClass("play");
-    btn.addClass("pause");
-    swpVisual.autoplay.start();
-  }
-});
+};
 
 var swpVisual;
 var swpBiz;
@@ -223,27 +185,4 @@ $(document).ready(function () {
     $("#swp-biz-slide .controller .crnt").html(crnt);
   });
   swpBiz.autoplay.stop();
-
-  // customer
-  swpCoustomer = new Swiper("#swp-customer-slide", {
-    speed: 600,
-    loop: false,
-    spaceBetween: 20,
-    autoplay: false,
-  });
-
-  swpCoustomer.on("init", function () {
-    setTimeout(function () {
-      var total = swpCoustomer.slides.length;
-      var crnt = swpCoustomer.realIndex + 1;
-      if (total < 10) total = "0" + total;
-      if (crnt < 10) crnt = "0" + crnt;
-      $("#swp-customer-slide .controller .crnt").html(crnt);
-    }, 200);
-  });
-  swpCoustomer.on("slideChange", function () {
-    var crnt = swpCoustomer.realIndex + 1;
-    if (crnt < 10) crnt = "0" + crnt;
-    $("#swp-customer-slide .controller .crnt").html(crnt);
-  });
 });
