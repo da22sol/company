@@ -416,31 +416,21 @@
 
 
     <!-- //fullpage -->
-		<script>
-      $(document).ready(function () {
-        $(".gnb .depth01").click(function (e) {
-          e.preventDefault(); // 기본 링크 이벤트 방지
+ <script>
+      $(function () {
+        $(".gnb a").on("click", function (e) {
+          e.preventDefault();
 
-          var target = $(this).attr("href"); // 클릭된 메뉴의 href 속성 값 가져오기
-          var offset = $(target).offset().top; // 해당 섹션의 상단 위치 계산
+          var targetId = $(this).attr("href");
 
-          // 해당 섹션으로 스크롤 애니메이션
-          $("html, body").animate({ scrollTop: offset }, 800);
-
-          // 선택된 메뉴 표시
-          $(".gnb .depth01").removeClass("active"); // 모든 메뉴 항목에서 active 클래스 제거
-          $(this).addClass("active"); // 현재 클릭된 메뉴 항목에 active 클래스 추가
+          // 대상 섹션으로 스크롤 이동
+          $("html, body").animate(
+            {
+              scrollTop: $(targetId).offset().top,
+            },
+            500
+          );
         });
-      });
-    </script>
-    <script>
-      $(document).ready(function () {
-        $("html").animate(
-          {
-            scrollTop: offset.top - 600,
-          },
-          400
-        );
       });
     </script>
   </body>
